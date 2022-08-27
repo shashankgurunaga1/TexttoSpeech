@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Browser voices</title>
+    <link rel="stylesheet" href="../static/style.css">
+  </head>
+      <body>
+
+          <header>
+
+            
+            <img src="{{url_for('static', filename='text-to-speech.jpg')}}"  style="width:300px;height:150px;" class="image" />
+            <h1><b>Text to Speech</b></h1>
+          </header>
+         
+
+        <main>
+
+            <form action="{{ url_for('text_conversion')}}" method="post" autocomplete="off">
+                <h2>{{msg}}</h2>
+
+                <div class="field">
+                    <label for="speech"><b>Type Something</b></label>
+                    <input type="text" name="speech" id="speech" required />
+                </div>
+                <div class="field">
+                    <label for="voices"><b>Choose a Voice Assistant</b></label>
+                      <select name="voices" id="voices">
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                      </select>
+                </div>
+                <button name="submit" onclick="text_conversion()"><b>Say it</b></button>
+          </form>
+        </main>
+
+        <footer>
+            <p>
+                Built by Shashank Gurunaga</a>
+            </p>
+        </footer>
+
+      </body>
+</html>
